@@ -1,0 +1,51 @@
+<!-- プロパティ -->
+<script type="text/javascript">
+    RED.nodes.registerType("amazon cognito",{
+        category:"AWS",
+        color:"#C0DEED",
+        defaults: {
+            aws: {type:"config",required:true},
+            name: {value:""},
+            operation: { value:"listUsers"}
+        },
+        inputs:1,
+        outputs:1,
+        icon:"amazon.ico",
+        align:"right",
+        label: function() {
+            return this.name || "cognito "+ this.operation;
+        },
+        oneditprepare: function () {
+        }
+   });
+</script>
+
+<!-- 編集画面 -->
+<script type="text/x-red" data-template-name="amazon cognito">
+    <div class="form-row">
+        <label for="node-input-aws"><i class="fa fa-user"></i> AWS</label>
+        <input type="text" id="node-input-aws">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-operation"><i class="fa fa-wrench"></i> Operation</label>
+        <select id="node-input-operation">
+          <option value="listUsers"> listUsers</option>
+          <option value="adminGetUser"> adminGetUser</option>
+        </select>
+    </div>
+</script>
+
+<!-- ヘルプテキスト -->
+<script type="text/x-red" data-help-name="amazon cognito">
+<p>
+AWS cognito Get User functions
+</p>
+<p>
+<b>listUsers</b> Retrieve user.
+<b>adminGetUser</b> Retrieve user attributes.
+</p>
+</script>

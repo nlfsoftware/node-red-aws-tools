@@ -1,0 +1,29 @@
+{
+  "name": "node-red-contrib-aws-s",
+  "version": "0.0.1",
+  "description": "A collection of Node-RED nodes for AWS.  Includes nodes for Cognito, SES",
+  "dependencies": {
+    "aws-sdk": "^2.0.15"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shinyaikejima/node-red-contrib-aws-s.git"
+  },
+  "license": "Apache",
+  "keywords": [
+    "node-red",
+    "aws",
+    "cognito",
+    "ses"
+  ],
+  "node-red": {
+    "nodes": {
+      "amazon cognito": "cognito.js",
+      "amazon ses": "ses.js"
+    }
+  },
+  "author": {
+    "name": "Shinya Ikejima",
+    "email": "shinya.ikejima@gmail.com"
+  }
+}

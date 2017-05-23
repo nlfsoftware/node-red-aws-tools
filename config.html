@@ -1,0 +1,42 @@
+<!-- プロパティ -->
+<script type="text/javascript">
+    RED.nodes.registerType('config',{
+        category: 'config',
+        defaults: {
+            name: {value:"AWS"},
+            region: {value:"us-east-1",required:true}
+        },
+        credentials: {
+            accessKey: {type:"text"},
+            secretKey: {type:"text"},
+            userPoolId: {type:"text"}
+        },
+        label: function() {
+            return this.name;
+        }
+    });
+</script>
+
+<!-- 編集画面 -->
+<script type="text/x-red" data-template-name="config">
+    <div class="form-row">
+        <label for="node-config-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-config-input-name">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-region"><i class="fa fa-wrench"></i> Region</label>
+        <input type="text" id="node-config-input-region">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-accessKey"><i class="icon-bookmark"></i> Access Id</label>
+        <input type="text" id="node-config-input-accessKey">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-secretKey"><i class="icon-bookmark"></i> Secret Key</label>
+        <input type="text" id="node-config-input-secretKey">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-userPoolId"><i class="icon-bookmark"></i> User Pool ID</label>
+        <input type="text" id="node-config-input-userPoolId">
+    </div>
+</script>

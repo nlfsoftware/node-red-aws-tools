@@ -1,0 +1,59 @@
+<!-- プロパティ -->
+<script type="text/javascript">
+    RED.nodes.registerType("amazon ses",{
+        category:"AWS",
+        color:"#C0DEED",
+        defaults: {
+            name: {value:""},
+            aws: {type:"config",required:true},
+            operation: { value:"sendEmail"},
+            from: {value:""},
+            charset: {value:"utf-8"}
+        },
+        inputs:1,
+        outputs:1,
+        icon:"amazon.ico",
+        align:"right",
+        label: function() {
+            return this.name || "ses "+ this.operation;
+        },
+        oneditprepare: function () {
+        }
+   });
+</script>
+
+<!-- 編集画面 -->
+<script type="text/x-red" data-template-name="amazon ses">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-aws"><i class="fa fa-user"></i> AWS</label>
+        <input type="text" id="node-input-aws">
+    </div>
+    <div class="form-row">
+        <label for="node-input-operation"><i class="fa fa-wrench"></i> Operation</label>
+        <select id="node-input-operation">
+          <option value="sendEmail"> sendEmail</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-from"><i class="fa fa-envelope"></i> From</label>
+        <input type="text" id="node-input-from" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-charset"><i class="fa fa-tag"></i> Charset</label>
+        <input type="text" id="node-input-charset" placeholder="">
+    </div>
+</script>
+
+<!-- ヘルプテキスト -->
+<script type="text/x-red" data-help-name="amazon ses">
+<p>
+AWS ses sendEmail functions
+</p>
+<p>
+<b>sendEmail</b> Send mail to target address.
+</p>
+</script>
