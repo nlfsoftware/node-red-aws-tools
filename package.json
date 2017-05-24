@@ -9,7 +9,7 @@
     "type": "git",
     "url": "https://github.com/shinyaikejima/node-red-contrib-aws-s.git"
   },
-  "license": "Apache",
+  "license": "MIT",
   "keywords": [
     "node-red",
     "aws",
