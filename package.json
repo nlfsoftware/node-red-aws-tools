@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-aws-s",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A collection of Node-RED nodes for AWS.  Includes nodes for Cognito, SES",
   "dependencies": {
     "aws-sdk": "^2.0.15"
@@ -19,7 +19,8 @@
   "node-red": {
     "nodes": {
       "amazon cognito": "cognito.js",
-      "amazon ses": "ses.js"
+      "amazon ses": "ses.js",
+      "config": "config.js"
     }
   },
   "author": {
