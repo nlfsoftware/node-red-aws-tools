@@ -56,9 +56,12 @@ module.exports = function(RED) {
 
                 node.status({fill:"blue",shape:"dot",text:"adminGetUser"});
 
+                if (typeof msg.j === "undefined") var idx = 0;
+                else var idx = msg.j;
+
                 var params = {
                     UserPoolId: '' + this.userPoolId,
-                    Username: '' + msg.users.Users[msg.i].Username
+                    Username: '' + msg.users.Users[idx].Username
                 };
                 cognitoidentityserviceprovider.adminGetUser(params, node.sendMsg);
 
