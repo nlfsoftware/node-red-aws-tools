@@ -42,7 +42,7 @@ module.exports = function(RED) {
                 node.status({fill:"blue",shape:"dot",text:"sendEmail"});
                 var params = {
                     Destination: {
-                        ToAddresses: [ msg.payload.UserAttributes[2].Value ]
+                        ToAddresses: [ msg.topic ]
                     },
                     Message: {
                         Body: {

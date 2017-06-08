@@ -10,7 +10,6 @@ module.exports = function(RED) {
         this.userPoolId = this.awsConfig.userPoolId;
         this.operation = n.operation;
         this.name= n.name;
-
         var node = this;
         var AWS = require("aws-sdk");
 
@@ -56,14 +55,23 @@ module.exports = function(RED) {
 
                 node.status({fill:"blue",shape:"dot",text:"adminGetUser"});
 
-                if (typeof msg.j === "undefined") var idx = 0;
-                else var idx = msg.j;
+                var params = {
+                    UserPoolId: '' + this.userPoolId,
+                    Username: '' + msg.topic
+                };
+                cognitoidentityserviceprovider.adminGetUser(params, node.sendMsg);
+
+                break;
+
+              case 'adminListGroupsForUser':
+
+                node.status({fill:"blue",shape:"dot",text:"adminListGroupsForUser"});
 
                 var params = {
                     UserPoolId: '' + this.userPoolId,
-                    Username: '' + msg.users.Users[idx].Username
+                    Username: '' + msg.topic
                 };
-                cognitoidentityserviceprovider.adminGetUser(params, node.sendMsg);
+                cognitoidentityserviceprovider.adminListGroupsForUser(params, node.sendMsg);
 
                 break;
 
