@@ -1,13 +1,13 @@
 {
-  "name": "node-red-contrib-aws-s",
-  "version": "0.0.5",
-  "description": "A collection of Node-RED nodes for AWS.  Includes nodes for Cognito, SES",
+  "name": "node-red-aws-tools",
+  "version": "0.0.2",
+  "description": "The aim of this project is create a set of nodes for Node Red to use with AWS",
   "dependencies": {
-    "aws-sdk": "^2.0.15"
+    "aws-sdk": "^2.124.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/shinyaikejima/node-red-contrib-aws-s.git"
+    "url": "https://github.com/nlfsoftware/node-red-aws-tools.git"
   },
   "license": "MIT",
   "keywords": [
@@ -24,7 +24,7 @@
     }
   },
   "author": {
-    "name": "Shinya Ikejima",
-    "email": "shinya.ikejima@gmail.com"
+    "name": "NLF Software",
+    "email": "webmaster@nlfsoftware.com"
   }
 }

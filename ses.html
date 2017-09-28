@@ -8,6 +8,7 @@
             aws: {type:"config",required:true},
             operation: { value:"sendEmail"},
             from: {value:""},
+            replyTo: {value:""},
             charset: {value:"utf-8"}
         },
         inputs:1,
@@ -41,6 +42,10 @@
     <div class="form-row">
         <label for="node-input-from"><i class="fa fa-envelope"></i> From</label>
         <input type="text" id="node-input-from" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-replyTo"><i class="fa fa-reply"></i> Reply To</label>
+        <input type="text" id="node-input-replyTo" placeholder="">
     </div>
     <div class="form-row">
         <label for="node-input-charset"><i class="fa fa-tag"></i> Charset</label>

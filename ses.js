@@ -10,6 +10,7 @@ module.exports = function(RED) {
         this.name= n.name;
         this.operation = n.operation;
         this.from = n.from;
+        this.replyTo = n.replyTo;
         this.charset = n.charset;
         var node = this;
 
@@ -19,7 +20,7 @@ module.exports = function(RED) {
             secretAccessKey: this.secretKey,
             region: '' + this.region
         });
-        var ses = new AWS.SES({apiVersion: '2010-12-01'})
+        var ses = new AWS.SES();
         
         node.on("input", function(msg) {
 
@@ -56,7 +57,8 @@ module.exports = function(RED) {
                             Charset: this.charset
                         }
                     },
-                    Source: this.from
+                    ReturnPath: msg.replyTo? msg.replyTo : this.replyTo,
+                    Source: msg.from? msg.from : this.from
                 };
                 ses.sendEmail(params, node.sendMsg);
                 break;
