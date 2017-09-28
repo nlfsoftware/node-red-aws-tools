@@ -4,7 +4,7 @@ Node Red AWS Tools
 The aim of this project is create a set of nodes for <a href="https://nodered.org/" target="_new">Node Red</a> to use with <a href="https://aws.amazon.com/" target="_new">AWS</a>
 
 
-
+[![NPM](https://nodei.co/npm/node-red-aws-tools.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/node-red-aws-tools/)
 
 
 Acknowledgements
