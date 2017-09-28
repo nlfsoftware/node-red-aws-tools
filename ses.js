@@ -47,8 +47,12 @@ module.exports = function(RED) {
                     },
                     Message: {
                         Body: {
+                            Html: {
+                                Charset: this.charset,
+                                Data: msg.htmlBody
+                            },
                             Text: {
-                                Data: msg.body,
+                                Data: msg.textBody,
                                 Charset: this.charset
                             }
                         },
