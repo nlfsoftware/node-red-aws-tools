@@ -1,6 +1,6 @@
 {
   "name": "node-red-aws-tools",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "The aim of this project is create a set of nodes for Node Red to use with AWS",
   "dependencies": {
     "aws-sdk": "^2.124.0"
